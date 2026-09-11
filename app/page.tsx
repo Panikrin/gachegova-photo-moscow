@@ -11,14 +11,14 @@ const packages = [
   {
     tag: 'Легко и по-настоящему',
     title: 'Ваша история',
-    price: 'стоимость уточняется',
+    price: '18 000 ₽',
     image: '/portfolio/maternity.jpg',
     features: ['съёмка в стиле life-style', 'помощь с идеей и подбором образов', 'подбор локации или студии', 'подсказки в процессе съёмки', 'авторская обработка фотографий'],
   },
   {
     tag: 'Забота о каждой детали',
     title: 'Всё включено',
-    price: 'стоимость уточняется',
+    price: '32 000 ₽',
     image: '/portfolio/mother-baby.jpg',
     features: ['всё из пакета «Ваша история»', 'расширенная подготовка к съёмке', 'помощь с командой специалистов', 'сопровождение на всех этапах', 'индивидуальные детали съёмки'],
   },
@@ -46,6 +46,16 @@ const faq = [
 ];
 
 const whatsapp = 'https://wa.me/79292835080';
+const instagram = 'https://www.instagram.com/gachegova_ph/';
+const telegram = 'https://t.me/polya_gachegova';
+const vk = 'https://vk.ru/gachegova_p';
+
+const socials = [
+  ['Instagram', instagram],
+  ['Telegram', telegram],
+  ['VK', vk],
+  ['WhatsApp', whatsapp],
+];
 
 export default function Home() {
   return (
@@ -68,7 +78,7 @@ export default function Home() {
           <p className="eyebrow">Семейный фотограф в Москве</p>
           <h1>Истории,<br />где живёт <em>любовь</em></h1>
           <p className="hero-lead">Это не просто снимки — это история вашей семьи, ваших чувств и важных маленьких моментов.</p>
-          <div className="hero-actions"><a className="button button-bronze" href="#services">Посмотреть стоимость ↓</a><a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Написать Полине ↗</a></div>
+          <div className="hero-actions"><a className="button button-bronze" href="#services">Посмотреть стоимость</a><a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Написать Полине</a></div>
           <div className="hero-stat"><strong>100+</strong><span>довольных клиентов<br />и историй в кадре</span></div>
         </div>
         <figure className="hero-photo"><img src="/portfolio/mother-daughter.jpg" alt="Семейная съёмка мамы с дочкой" /><figcaption><span>Полина Гачегова</span><span>Москва</span></figcaption></figure>
@@ -81,23 +91,23 @@ export default function Home() {
 
       <section className="manifesto" id="about">
         <div><p className="eyebrow">Ваш фотограф</p><h2>Полина<br /><em>Гачегова</em></h2></div>
-        <div className="manifesto-copy"><h3>Что для меня важно в семейных съёмках?</h3><p>Любовь — в первую очередь. Не постановочная идеальная картинка, а вы настоящие: ваши объятия, смех, движения и привычные взгляды друг на друга.</p><p>На съёмке я всегда рядом: помогу с идеей, образом, локацией и позированием.</p><a className="text-link" href="https://www.instagram.com/gachegova_ph/" target="_blank" rel="noreferrer">Больше обо мне в Instagram ↗</a></div>
+        <div className="manifesto-copy"><h3>Что для меня важно в семейных съёмках?</h3><p>Любовь — в первую очередь. Не постановочная идеальная картинка, а вы настоящие: ваши объятия, смех, движения и привычные взгляды друг на друга.</p><p>На съёмке я всегда рядом: помогу с идеей, образом, локацией и позированием.</p><a className="text-link" href={instagram} target="_blank" rel="noreferrer">Больше обо мне в Instagram</a></div>
       </section>
 
       <section className="catalog-section" id="portfolio">
         <div className="catalog-heading"><div><p className="eyebrow">Портфолио</p><h2>Ваши чувства<br /><em>в кадре</em></h2></div><div className="catalog-intro"><p>Семья, ожидание малыша, прогулка по городу или портрет только для себя — у каждой истории свой ритм.</p></div></div>
         <div className="catalog-grid">
-          {catalog.map((item, index) => <article className="catalog-card" key={item.title}><a className="catalog-image" href={whatsapp} target="_blank" rel="noreferrer" aria-label={`Обсудить съёмку «${item.title}»`}><img src={item.image} alt={item.title} /><span className="catalog-number">0{index + 1}</span><span className="catalog-arrow" aria-hidden="true">↗</span></a><div className="catalog-copy"><p>{item.category}</p><h3>{item.title}</h3><span>{item.description}</span><a href={whatsapp} target="_blank" rel="noreferrer">Обсудить съёмку ↗</a></div></article>)}
+          {catalog.map((item, index) => <article className="catalog-card" key={item.title}><a className="catalog-image" href={whatsapp} target="_blank" rel="noreferrer" aria-label={`Обсудить съёмку «${item.title}»`}><img src={item.image} alt={item.title} /><span className="catalog-number">0{index + 1}</span><span className="catalog-arrow" aria-hidden="true">↗</span></a><div className="catalog-copy"><p>{item.category}</p><h3>{item.title}</h3><span>{item.description}</span><a href={whatsapp} target="_blank" rel="noreferrer">Обсудить съёмку</a></div></article>)}
         </div>
       </section>
 
       <section className="support-section">
         <img src="/portfolio/moscow-summer.jpg" alt="Летняя съёмка в Москве" />
-        <div><p className="eyebrow">Я буду с вами на связи</p><h2>От первой идеи<br />до готовых фотографий</h2><p>Помогу выбрать студию или маршрут, подобрать одежду и цветовую гамму. Во время съёмки буду направлять вас и ваших близких, чтобы всё прошло легко.</p><a className="button button-bronze" href={whatsapp} target="_blank" rel="noreferrer">Связаться ↗</a></div>
+        <div><p className="eyebrow">Я буду с вами на связи</p><h2>От первой идеи<br />до готовых фотографий</h2><p>Помогу выбрать студию или маршрут, подобрать одежду и цветовую гамму. Во время съёмки буду направлять вас и ваших близких, чтобы всё прошло легко.</p><a className="button button-bronze" href={whatsapp} target="_blank" rel="noreferrer">Связаться</a></div>
       </section>
 
       <section className="services-section" id="services">
-        <div className="services-heading"><p className="eyebrow">Прайс на съёмку</p><h2>Выберите свою<br /><em>историю</em></h2><p>Стоимость зависит от формата и подготовки. Напишите мне — я уточню детали и предложу подходящий пакет.</p></div>
+        <div className="services-heading"><p className="eyebrow">Прайс на съёмку</p><h2>Выберите свою<br /><em>историю</em></h2><p>Базовая стоимость указана для стандартного формата. Напишите мне — я уточню детали и предложу подходящий пакет.</p></div>
         <div className="package-list">
           {packages.map((item, index) => <article className={`package-card package-${index + 1}`} key={item.title}><div className="package-photo"><img src={item.image} alt={item.title} /></div><div className="package-body"><p className="package-tag">{item.tag}</p><h3>{item.title}</h3><ul>{item.features.map((feature) => <li key={feature}>{feature}</li>)}</ul><a className="package-price" href={whatsapp} target="_blank" rel="noreferrer">{item.price} <span>↗</span></a></div></article>)}
         </div>
@@ -114,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="reviews-section">
-        <div><p className="eyebrow">Тёплые слова</p><h2>Отзывы героев<br />моих историй</h2><p>Реальные впечатления клиентов собраны в актуальном профиля.</p><a className="button button-light" href="https://www.instagram.com/stories/highlights/17882895497809817/" target="_blank" rel="noreferrer">Смотреть отзывы ↗</a></div>
+        <div><p className="eyebrow">Тёплые слова</p><h2>Отзывы героев<br />моих историй</h2><p>Реальные впечатления клиентов собраны в актуальном профиле.</p><a className="button button-light" href="https://www.instagram.com/stories/highlights/17882895497809817/" target="_blank" rel="noreferrer">Смотреть отзывы</a></div>
         <img src="/portfolio/friends.jpg" alt="Дружеская съёмка" />
       </section>
 
@@ -123,9 +133,9 @@ export default function Home() {
         <div className="faq-list">{faq.map(([question, answer], index) => <details key={question}><summary><span>{String(index + 1).padStart(2, '0')}</span><h3>{question}</h3><b>+</b></summary><p>{answer}</p></details>)}</div>
       </section>
 
-      <section className="contact-section" id="contact"><p className="eyebrow">Пора сохранить эту главу</p><h2>Давайте создадим<br /><em>вашу историю</em></h2><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Написать в WhatsApp ↗</a></section>
+      <section className="contact-section" id="contact"><p className="eyebrow">Пора сохранить эту главу</p><h2>Давайте создадим<br /><em>вашу историю</em></h2><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Написать в WhatsApp</a><div className="contact-socials" aria-label="Социальные сети">{socials.map(([name, href]) => <a key={name} href={href} target="_blank" rel="noreferrer">{name}</a>)}</div></section>
 
-      <footer><a className="brand footer-brand" href="#top"><span>GACHEGOVA</span><small>photography</small></a><p>Фотограф в Москве · Полина Гачегова</p><div className="footer-links"><a href="https://www.instagram.com/gachegova_ph/" target="_blank" rel="noreferrer">Instagram ↗</a><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a></div></footer>
+      <footer><a className="brand footer-brand" href="#top"><span>GACHEGOVA</span><small>photography</small></a><p>Фотограф в Москве · Полина Гачегова</p><div className="footer-links">{socials.map(([name, href]) => <a key={name} href={href} target="_blank" rel="noreferrer">{name}</a>)}</div></footer>
     </main>
   );
 }
