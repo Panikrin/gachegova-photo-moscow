@@ -52,7 +52,14 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Gachegova — на главную"><span>GACHEGOVA</span><small>photography</small></a>
-        <nav aria-label="Основная навигация"><a href="#portfolio">Портфолио</a><a href="#services">Услуги</a><a href="#about">Обо мне</a><a href="#faq">FAQ</a></nav>
+        <nav aria-label="Основная навигация">
+          <a href="#portfolio">Портфолио</a>
+          <a href="#services">Стоимость</a>
+          <a href="#about">Обо мне</a>
+          <a href="#process">Как проходит</a>
+          <a href="#faq">Вопросы</a>
+          <a href="#contact">Контакты</a>
+        </nav>
         <a className="header-cta" href={whatsapp} target="_blank" rel="noreferrer">Записаться</a>
       </header>
 
