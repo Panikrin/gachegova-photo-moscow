@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       <section className="services-section" id="services">
-        <div className="services-heading"><p className="eyebrow">Прайс на съёмку</p><h2>Выберите свою<br /><em>историю</em></h2><p>Точные цены добавлю сюда сразу после того, как вы пришлёте актуальный прайс Полины.</p></div>
+        <div className="services-heading"><p className="eyebrow">Прайс на съёмку</p><h2>Выберите свою<br /><em>историю</em></h2><p>Стоимость зависит от формата и подготовки. Напишите мне — я уточню детали и предложу подходящий пакет.</p></div>
         <div className="package-list">
           {packages.map((item, index) => <article className={`package-card package-${index + 1}`} key={item.title}><div className="package-photo"><img src={item.image} alt={item.title} /></div><div className="package-body"><p className="package-tag">{item.tag}</p><h3>{item.title}</h3><ul>{item.features.map((feature) => <li key={feature}>{feature}</li>)}</ul><a className="package-price" href={whatsapp} target="_blank" rel="noreferrer">{item.price} <span>↗</span></a></div></article>)}
         </div>
